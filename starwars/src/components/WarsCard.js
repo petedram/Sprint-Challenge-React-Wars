@@ -1,16 +1,16 @@
 import React from "react";
 import {
-    Card, CardImg, CardText, CardBody, CardHeader, Col
+    Card, CardText, CardBody, CardHeader, Col, Button
   } from 'reactstrap';
 
 
 
-const WarsCard = props => {
+export const WarsCard = props => {
   return (
     <div className="people-list">
-        <Col>
-        <Card>
-            <CardHeader>Name: {props.name}</CardHeader>
+        <Col sm={{ size: 'auto'}}>
+            <Card>
+                <CardHeader>Name: {props.name}</CardHeader>
                 <CardBody>
                     <CardText>Height: {props.height} </CardText>
                 </CardBody>
@@ -20,4 +20,11 @@ const WarsCard = props => {
   );
 };
 
-export default WarsCard;
+export const NextButton = props => {
+    return (
+        <div className="people-list">
+            <Button onClick={props.nextLog}>NEXT LIST OF CHARACTERS</Button>
+        </div>
+    );
+};
+
