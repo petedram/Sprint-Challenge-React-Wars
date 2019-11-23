@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import WarsCard from "./WarsCard";
+import { Container, Row } from "reactstrap";
 
 
 export default function WarsList() {
@@ -19,13 +20,12 @@ const [personArray, setPersonArray] = useState([]);
     axios
       .get("https://swapi.co/api/people/")
       .then(response => {
-
-        console.log(response);
         
-        var personCount = response.data.count;
-        console.log(personCount);
+        // var personCount = response.data.count;
+        // console.log(personCount);
 
         setPersonArray(response.data.results);
+        console.log(response.data);
 
 
       })
@@ -34,13 +34,14 @@ const [personArray, setPersonArray] = useState([]);
   useEffect(didUpdate, []);
 
   return (
-    <div className="person-card">
+    <Container>
+        <Row>
 
         { personArray.map(item => {
         return <WarsCard name={item.name} height={item.height} key={item.url} />;
       })} 
-
-    </div>
+        </Row>
+    </Container>
 
       
     //   {<WarsCard addOne={addOne} />
