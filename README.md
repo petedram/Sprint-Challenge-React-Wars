@@ -26,13 +26,27 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] What is React JS and what problems does it try and solve? Support your answer with concepts introduced in class and from your personal research on the web.
 
+React is a User Interface Library. It tried to solve the problem of one way data flow down the component hierarchy so that components will render and change when the data changes. Components manage their own state then compose them to make the user interface. React is ideal for applications which do not have static data, rather data which changes over time. React also allows us to create reuseable components. React has a virtual DOM so that it can update only the parts of the hierarchy which have changed which increases performance. e.g. events such as comments updating on a page would update that object rather than the entire DOM.
+
+
 - [ ] What does it mean to _think_ in react?
+
+To think in react is to think about the UI as components which are in a hierarchy. Each component is thought of as a new function or object. Think about the static version first, then think about model data by identifying where state should live and which component owns the state for the one way data flow down the component hierarchy. Think about props and how they will put together props for child components.
 
 - [ ] Describe state.
 
+State holds information that influences the output of render. State is managed within the component (similar to variables declared within a function). A component manages it own state internally but has no business fiddling with the state of its children.
+
 - [ ] Describe props.
 
+Props are properties which get passed to the component (similar to function parameters). They are a components configuration (a components options). A component cannot change its props, but it is responsible for putting together the props of its child components.
+
 - [ ] What are side effects, and how do you sync effects in a React component to state or prop changes?
+
+A side effect is anything that affects something outside the scope of the function being executed. For example, fetching data from an API, timers, logging and manually manipulating the DOM are all examples of side effects. The Effect Hook lets you perform side effects in function components. With useEffect you can pass a function that will run after each render - the second argument of array values allows you to specify it to run only when the values of that argument change. 
+
+
+
 
 ## Project Set Up
 
