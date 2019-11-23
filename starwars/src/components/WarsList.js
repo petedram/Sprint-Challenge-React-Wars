@@ -16,6 +16,7 @@ if (nextArray == null) {
 }
     SetNextTrigger(nextTrigger+1)
     console.log(nextArray);
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 };
 
 
@@ -43,17 +44,11 @@ useEffect(didUpdate, [nextTrigger]);
 return (
 <Container >
     <Row>
-    
-    { personArray.map(item => {
-    return <WarsCard name={item.name} height={item.height} key={item.url} />;
-    })} 
+        { personArray.map(item => {
+        return <WarsCard name={item.name} height={item.height} key={item.url} 
+        mass={item.mass} hair_color={item.hair_color} />;
+        })} 
     </Row>
     <NextButton nextLog={nextPage} />
-</Container>
-
-
-    
-
-);
-  
-}
+</Container>    
+)};
